@@ -17,7 +17,7 @@ The application employs a Convolutional Neural Network (CNN) model trained on X-
 **Installation**
 
 **Clone Repository:**
-git clone https://github.com/your_username/medical-diagnosis-app.git
+git clone https://github.com/Akshayaamahesh/diseaseprediction.git
 cd medical-diagnosis-app
 
 **Install Dependencies:**
