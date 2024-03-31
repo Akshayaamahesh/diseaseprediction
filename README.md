@@ -1,4 +1,4 @@
-# ML-Based Disease Prediction and Pneumonia Image detection system
+# ML-Based Disease Prediction and Pneumonia Image Detection System
 
 **Overview**
 This web application serves as a medical diagnosis tool that predicts potential diseases based on symptoms provided by users. It also includes a feature to analyze X-ray images for pneumonia detection. The application utilizes machine learning models trained on medical datasets to provide accurate predictions.
