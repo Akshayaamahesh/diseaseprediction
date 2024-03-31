@@ -18,10 +18,6 @@ The application employs a Convolutional Neural Network (CNN) model trained on X-
 
 **Clone Repository:**
 git clone https://github.com/Akshayaamahesh/diseaseprediction.git
-cd medical-diagnosis-app
-
-**Install Dependencies:**
-pip install -r requirements.txt
 
 **Download Model Files:**
 Download the pre-trained model files for symptom prediction and X-ray analysis.
