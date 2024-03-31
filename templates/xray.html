@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Prediction</title>
+    <link rel="stylesheet" href="static\xstyle.css?v=1.0">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Pneumonia Prediction</h1>
+        <div class="upload-section">
+            <input type="file" id="imageInput" accept=".jpg, .jpeg, .png" onchange="previewImage()">
+            <button onclick="predictImage()">Predict</button>
+        </div>
+        <div class="preview-section">
+            <img id="preview" alt="Preview Image">
+            <p id="predictionResult"></p>
+        </div>
+    </div>
+
+    <script src="static\xscript.js?v=1.0"></script>
+</body>
+</html>

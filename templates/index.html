@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            overflow:scroll; 
+        }
+
+        nav {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 60px; /* Adjust margin for spacing */
+            font-size: 18px;
+        }
+
+        .content {
+            text-align: center;
+            background: url('{{ url_for('static', filename='images/bg.jpg') }}') center/cover no-repeat;
+            height: 100vh; /* 100% of the viewport height */
+            width: 100vw; /* 100% of the viewport width */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px; /* Add margin to create space between content and form */
+        }
+
+        h1 {
+            padding-top: 25px;
+            font-size: 3em;
+            margin: 0;
+            color: black;
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 10px auto; /* Add margin to center */
+            color: black;
+        }
+
+        /* Form styling */
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+            text-align:center;
+
+        }
+
+        .label {
+            color: Red;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Add additional styling for input fields */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color:red;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            align-items: center;
+        }
+
+        /* Style the submit button */
+        input[type="submit"],input[type="reset"] {
+            background-color: Red;
+            color: yellow;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 10px;
+            width: 150px;
+            border: none;
+            cursor: pointer;
+            display:inline-block;
+        }
+
+        input[type="reset"] {
+           margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Disease prediction and treatment</a>
+        <a href="/xray">Pneumonia prediction using Xray</a>
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+    </nav>
+
+    <div class="content">
+        <h1>Disease Prediction</h1>
+        <p>Empowering you with innovative technology to predict diseases early. Take control of your health and well-being.</p>
+    </div>
+    <div class="diagnosis">
+    <h1>Medical Diagnosis</h1>
+   
+
+    <form action="/predict_symptoms" method="post">
+        <label for="Name">Name:</label>
+        <input type="text" id="Name" name="Name"><br><br>
+
+        <label for="Symptom1">Symptom 1:</label>
+        <select id="Symptom1" name="Symptom1">
+            <option value="" selected disabled>Select</option> <!-- Added "Select" option -->
+        </select><br><br>
+
+        <label for="Symptom2">Symptom 2:</label>
+        <select id="Symptom2" name="Symptom2">
+            <option value="" selected disabled>Select</option> <!-- Added "Select" option -->
+        </select><br><br>
+
+        <label for="Symptom3">Symptom 3:</label>
+        <select id="Symptom3" name="Symptom3">
+            <option value="" selected disabled>Select</option> <!-- Added "Select" option -->
+        </select><br><br>
+
+        <label for="Symptom4">Symptom 4:</label>
+        <select id="Symptom4" name="Symptom4">
+            <option value="" selected disabled>Select</option> <!-- Added "Select" option -->
+        </select><br><br>
+
+        <label for="Symptom5">Symptom 5:</label>
+        <select id="Symptom5" name="Symptom5">
+            <option value="" selected disabled>Select</option> <!-- Added "Select" option -->
+        </select><br><br>
+        <pre>
+        <input type="submit" value="Submit">    <input type="reset" value="Reset">
+        </pre>
+    </form>
+
+    <script>
+        var symptoms = {{ symptoms | tojson }};
+
+        for (var i = 1; i <= 5; i++) {
+            var select = document.getElementById('Symptom' + i);
+            for (var j = 0; j < symptoms.length; j++) {
+                var option = document.createElement('option');
+                option.value = symptoms[j];
+                option.text = symptoms[j];
+                select.appendChild(option);
+            }
+        }
+    </script>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.upload-section {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+img {
+    max-width: 50%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+h1{
+text-align:center;
+}
